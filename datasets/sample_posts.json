@@ -1,0 +1,57 @@
+[
+  {
+    "post_id": "2001",
+    "platform": "REDDIT",
+    "author_id": "tech_critic_01",
+    "text": "Extensive testing on battery drain shows standby consumption jumped by 35% after the latest firmware patch.",
+    "created_at": "2026-10-25 08:45:00",
+    "like_count": 89,
+    "reply_count": 24,
+    "share_count": 15,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "2002",
+    "platform": "REDDIT",
+    "author_id": "shill_bot_99",
+    "text": "Extensive testing on battery drain shows standby consumption jumped by 35% after the latest firmware patch.",
+    "created_at": "2026-10-25 08:47:00",
+    "like_count": 2,
+    "reply_count": 0,
+    "share_count": 0,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "2003",
+    "platform": "REDDIT",
+    "author_id": "gadget_guru",
+    "text": "The camera optical image stabilization on this sensor is truly stellar. Macro details are unmatched.",
+    "created_at": "2026-10-25 11:30:00",
+    "like_count": 140,
+    "reply_count": 19,
+    "share_count": 28,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "2004",
+    "platform": "REDDIT",
+    "author_id": "dev_analyst",
+    "text": "Urgent alert: Firmware 14.2 kernel panic issue causing system boot loops across multiple regions.",
+    "created_at": "2026-10-26 14:10:00",
+    "like_count": 312,
+    "reply_count": 78,
+    "share_count": 94,
+    "reply_to_post_id": null
+  },
+  {
+    "post_id": "2005",
+    "platform": "REDDIT",
+    "author_id": "reddit_user_42",
+    "text": "Can confirm my phone is stuck on boot logo. Battery was at 80% when it started rebooting.",
+    "created_at": "2026-10-26 14:40:00",
+    "like_count": 95,
+    "reply_count": 21,
+    "share_count": 11,
+    "reply_to_post_id": "2004"
+  }
+]

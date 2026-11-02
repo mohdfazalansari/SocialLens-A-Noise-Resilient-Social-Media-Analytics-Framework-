@@ -1,0 +1,26 @@
+post_id,platform,author_id,text,created_at,like_count,reply_count,share_count,reply_to_post_id
+1001,TWITTER,user_alpha,The new battery firmware update causes extreme drain! Loses 40% in an hour #BatteryDrain,2026-10-25 08:30:00,14,3,2,
+1002,TWITTER,user_alpha_bot1,The new battery firmware update causes extreme drain! Loses 40% in an hour #BatteryDrain,2026-10-25 08:31:00,1,0,0,
+1003,TWITTER,user_alpha_bot2,The new battery firmware update causes extreme drain! Loses 40% in an hour #BatteryDrain,2026-10-25 08:31:30,0,0,0,
+1004,TWITTER,user_alpha_bot3,The new battery firmware update causes extreme drain! Loses 40% in an hour #BatteryDrain,2026-10-25 08:32:00,2,0,0,
+1005,TWITTER,user_beta,My phone battery drains terribly fast since this morning update. Needs charging 3 times a day.,2026-10-25 09:15:00,28,6,5,
+1006,TWITTER,user_charlie,Battery backup is completely broken after the patch. Anyone else experiencing fast drainage?,2026-10-25 09:40:00,35,8,9,
+1007,TWITTER,user_delta,Device overheats and battery drains down rapidly while on standby mode.,2026-10-25 10:05:00,19,4,3,
+1008,TWITTER,support_team,@user_charlie Please try resetting your battery calibration settings via Settings > Device Care.,2026-10-25 10:15:00,5,1,0,user_charlie
+1009,TWITTER,user_charlie,@support_team I did that twice and battery is still dropping 20% every 30 minutes!,2026-10-25 10:20:00,12,3,2,support_team
+1010,TWITTER,user_echo,The new 100x zoom night mode camera is absolutely breathtaking! Best pictures I have ever taken.,2026-10-25 11:00:00,142,18,34,
+1011,TWITTER,user_foxtrot,Obsessed with the low light camera portrait shots. Colors and dynamic range are stunning! 📸🔥,2026-10-25 11:25:00,88,9,14,
+1012,TWITTER,user_golf,Camera lens clarity is gorgeous on the new model. Huge upgrade over previous generation.,2026-10-25 12:10:00,64,7,8,
+1013,TWITTER,user_hotel,Took some sunset photography today and the optics are crystal clear. Love the camera!,2026-10-25 12:50:00,110,12,21,
+1014,TWITTER,user_india,Has anyone tested the 4K 60fps video stabilization? Works super smooth while walking.,2026-10-25 13:20:00,45,15,6,
+1015,TWITTER,user_juliet,Critical software update bug: device freezes on lockscreen and reboots into infinite loop! 🚨,2026-10-26 14:00:00,210,48,65,
+1016,TWITTER,user_kilo,Warning! Do NOT install the latest 14.2 update! My screen went black and phone crashed.,2026-10-26 14:15:00,185,39,52,
+1017,TWITTER,user_lima,System crash loop after update. Phone is completely unusable and frozen on boot logo.,2026-10-26 14:30:00,164,31,44,
+1018,TWITTER,support_team,@user_juliet We are investigating reports of device reboot loops on build 14.2. Hotfix coming shortly.,2026-10-26 14:45:00,85,16,12,user_juliet
+1019,TWITTER,user_mike,@support_team What about users whose phones are bricked right now? Customer service is not answering.,2026-10-26 15:00:00,92,22,18,support_team
+1020,TWITTER,user_november,Phone crashed during banking transaction after the software update. Terrible reliability!,2026-10-26 15:30:00,130,24,29,
+1021,TWITTER,user_oscar,Latest update crashed my device mid call. Reboot loop started immediately.,2026-10-26 16:00:00,77,14,19,
+1022,TWITTER,user_papa,Screen display colors and 120Hz refresh rate make everyday navigation buttery smooth.,2026-10-26 16:45:00,53,5,6,
+1023,TWITTER,user_quebec,Very happy with the build quality and matte glass back finish. Feels premium in hand.,2026-10-26 17:15:00,61,8,4,
+1024,TWITTER,support_team,@user_mike Safe mode boot instructions have been posted on our official support portal.,2026-10-26 17:40:00,34,8,4,user_mike
+1025,TWITTER,user_romeo,Customer service resolved my replacement request in under 24 hours. Great support experience!,2026-10-26 18:20:00,41,6,3,support_team
