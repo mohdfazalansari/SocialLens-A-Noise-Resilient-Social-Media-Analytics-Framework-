@@ -88,3 +88,4 @@ public interface SocialMediaConnector {
 ```
 
 Authorized credentials (e.g., X API Bearer Token, Telegram Bot Token) are configured strictly via environment variables (`X_API_BEARER_TOKEN`, `TELEGRAM_BOT_TOKEN`), never hardcoded into source code.
+

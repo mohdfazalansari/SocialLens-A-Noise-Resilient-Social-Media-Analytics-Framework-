@@ -1,5 +1,7 @@
 package com.project.socialanalytics.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -18,9 +20,16 @@ public class AnalyticsJob {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dataset_id", nullable = false)
     private Dataset dataset;
+
+    @Transient
+    @JsonProperty("datasetId")
+    public Long getDatasetId() {
+        return dataset != null ? dataset.getId() : null;
+    }
 
     @Column(name = "job_type", nullable = false, length = 50)
     private String jobType = "FULL_PIPELINE";

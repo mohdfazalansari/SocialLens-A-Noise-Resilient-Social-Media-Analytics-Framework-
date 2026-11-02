@@ -16,7 +16,7 @@ public class TrendAlert {
     @JoinColumn(name = "dataset_id", nullable = false)
     private Dataset dataset;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "topic_id", nullable = false)
     private Topic topic;
 

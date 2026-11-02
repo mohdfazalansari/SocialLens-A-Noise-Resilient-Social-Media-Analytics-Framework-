@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class AnalysisOrchestratorService {
@@ -62,7 +63,6 @@ public class AnalysisOrchestratorService {
     @Autowired
     private FastApiClient fastApiClient;
 
-    @Transactional
     public AnalyticsJob startAnalysis(Long datasetId, AnalysisConfigDto config) {
         Dataset dataset = datasetRepository.findById(datasetId)
                 .orElseThrow(() -> new ResourceNotFoundException("Dataset", "id", datasetId));
@@ -78,13 +78,12 @@ public class AnalysisOrchestratorService {
         job.setStartedAt(LocalDateTime.now());
         AnalyticsJob savedJob = analyticsJobRepository.save(job);
 
-        runPipelineAsync(savedJob.getId(), datasetId, config);
+        CompletableFuture.runAsync(() -> runPipeline(savedJob.getId(), datasetId, config));
 
         return savedJob;
     }
 
-    @Async
-    public void runPipelineAsync(Long jobId, Long datasetId, AnalysisConfigDto config) {
+    public void runPipeline(Long jobId, Long datasetId, AnalysisConfigDto config) {
         logger.info("Starting AI pipeline execution for datasetId: {}", datasetId);
         try {
             updateJobProgress(jobId, 10, "Fetching dataset posts...");
@@ -199,7 +198,12 @@ public class AnalysisOrchestratorService {
             @SuppressWarnings("unchecked")
             List<Number> memberIds = (List<Number>) cluster.get("member_ids");
 
-            DuplicateGroup group = new DuplicateGroup(hash, type, BigDecimal.valueOf(sim), canonicalId, memberIds.size());
+            DuplicateGroup group = duplicateGroupRepository.findByGroupHash(hash)
+                    .orElseGet(() -> new DuplicateGroup(hash, type, BigDecimal.valueOf(sim), canonicalId, memberIds.size()));
+            group.setDuplicateType(type);
+            group.setSimilarityScore(BigDecimal.valueOf(sim));
+            group.setCanonicalPostId(canonicalId);
+            group.setMemberCount(memberIds.size());
             DuplicateGroup savedGroup = duplicateGroupRepository.save(group);
 
             for (Number numId : memberIds) {
@@ -312,6 +316,8 @@ public class AnalysisOrchestratorService {
     @Transactional
     public void processTrends(Long datasetId, Map<Integer, Topic> topicMap, Map<String, Object> trendResult) {
         Dataset dataset = datasetRepository.findById(datasetId).orElseThrow();
+        trendAlertRepository.deleteByDatasetId(datasetId);
+        trendSnapshotRepository.deleteByDatasetId(datasetId);
 
         // Save snapshots
         if (trendResult.containsKey("snapshots")) {
@@ -375,6 +381,8 @@ public class AnalysisOrchestratorService {
     @Transactional
     public void processNetwork(Long datasetId, Map<String, Object> networkResult) {
         Dataset dataset = datasetRepository.findById(datasetId).orElseThrow();
+        networkEdgeRepository.deleteByDatasetId(datasetId);
+        networkNodeRepository.deleteByDatasetId(datasetId);
 
         if (networkResult.containsKey("nodes")) {
             @SuppressWarnings("unchecked")

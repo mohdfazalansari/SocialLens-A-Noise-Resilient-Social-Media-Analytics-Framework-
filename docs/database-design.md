@@ -43,3 +43,4 @@ erDiagram
 13. **`analytics_jobs`**: Job tracking table recording progress percentage, started/completed timestamps, and error logs for asynchronous pipelines.
 14. **`evaluation_runs`**: Historical experimental runs comparing baseline vs proposed methods against ground truth labels.
 15. **`evaluation_results`**: Evaluation metrics (Precision, Recall, F1, False-Alert Rate, Detection Delay) across all 3 benchmark methods.
+

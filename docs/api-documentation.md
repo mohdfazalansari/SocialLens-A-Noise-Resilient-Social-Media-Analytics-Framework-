@@ -51,3 +51,4 @@
 - `POST /ai/trends/detect`: Noise-resilient multi-signal trend calculation and anomaly detection.
 - `POST /ai/network/analyze`: NetworkX PageRank, betweenness centrality, degree metrics, and community detection.
 - `POST /ai/evaluation/run`: Precision, recall, F1-score, and false-alarm rate comparative evaluation.
+

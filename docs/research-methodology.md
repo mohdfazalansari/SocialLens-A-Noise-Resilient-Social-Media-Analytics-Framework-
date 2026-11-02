@@ -60,3 +60,4 @@ Experiments compare all three approaches across standard information retrieval m
 - **F1-Score:** $2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$
 - **False-Alert Rate:** $\frac{FP}{TP + FP}$
 - **Average Detection Delay:** $\frac{1}{K} \sum_{k=1}^K (t_{alert, k} - t_{onset, k})$ in hours.
+

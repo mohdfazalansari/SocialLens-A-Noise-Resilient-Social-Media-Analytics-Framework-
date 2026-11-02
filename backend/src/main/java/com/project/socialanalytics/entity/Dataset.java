@@ -1,5 +1,7 @@
 package com.project.socialanalytics.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -37,9 +39,16 @@ public class Dataset {
     @Column(name = "analysis_status", nullable = false, length = 50)
     private AnalysisStatus analysisStatus = AnalysisStatus.PENDING;
 
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "uploaded_by")
     private User uploadedBy;
+
+    @Transient
+    @JsonProperty("uploadedByUsername")
+    public String getUploadedByUsername() {
+        return uploadedBy != null ? uploadedBy.getUsername() : null;
+    }
 
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
