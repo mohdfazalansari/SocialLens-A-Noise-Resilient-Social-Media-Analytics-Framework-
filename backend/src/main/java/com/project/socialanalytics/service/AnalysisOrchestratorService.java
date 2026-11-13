@@ -294,6 +294,7 @@ public class AnalysisOrchestratorService {
 
         // Post-Topic assignments
         if (topicResult.containsKey("assignments")) {
+            Set<String> seenPairs = new HashSet<>();
             @SuppressWarnings("unchecked")
             List<Map<String, Object>> assignments = (List<Map<String, Object>>) topicResult.get("assignments");
             for (Map<String, Object> a : assignments) {
@@ -304,8 +305,13 @@ public class AnalysisOrchestratorService {
                 SocialPost post = postMap.get(postId);
                 Topic topic = topicMap.get(tIdx);
                 if (post != null && topic != null) {
-                    PostTopic pt = new PostTopic(post, topic, BigDecimal.valueOf(prob));
-                    postTopicRepository.save(pt);
+                    String pairKey = postId + "-" + topic.getId();
+                    if (seenPairs.add(pairKey)) {
+                        PostTopic pt = postTopicRepository.findByPostIdAndTopicId(postId, topic.getId())
+                                .orElseGet(() -> new PostTopic(post, topic, BigDecimal.valueOf(prob)));
+                        pt.setProbability(BigDecimal.valueOf(prob));
+                        postTopicRepository.save(pt);
+                    }
                 }
             }
         }

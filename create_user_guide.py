@@ -597,3 +597,4 @@ if __name__ == "__main__":
     print(f" - {output_doc}")
     print(f" - {root_docx}")
     print(f" - {root_doc}")
+
