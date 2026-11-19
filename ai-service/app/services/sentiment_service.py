@@ -1,4 +1,5 @@
 import logging
+import re
 from typing import List, Dict, Any
 import numpy as np
 import torch
@@ -17,6 +18,7 @@ class SentimentClassifier:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.labels = ["NEGATIVE", "NEUTRAL", "POSITIVE"]  # CardiffNLP standard mapping
         self.is_loaded = False
+        self._attempted_load = False
 
     def load_model(self):
         try:
@@ -34,6 +36,10 @@ class SentimentClassifier:
     def predict_batch(self, items: List[TextItem]) -> List[SentimentResult]:
         if not items:
             return []
+
+        if not self.is_loaded and not self._attempted_load:
+            self._attempted_load = True
+            self.load_model()
 
         results: List[SentimentResult] = []
 
@@ -78,19 +84,35 @@ class SentimentClassifier:
 
     def _fallback_sentiment(self, text_id: int, text: str) -> SentimentResult:
         t = text.lower()
-        pos_words = {"good", "great", "excellent", "awesome", "love", "amazing", "best", "fantastic", "happy", "bullish", "profit", "gain", "solved", "fixed", "nice", "success", "helpful"}
-        neg_words = {"bad", "terrible", "worst", "hate", "awful", "poor", "crash", "drain", "broken", "fraud", "scam", "loss", "fail", "slow", "bug", "error", "horrible", "dump"}
+        pos_stems = (
+            "good", "great", "excel", "awesom", "love", "lov", "amaz", "best", "fantast", "happ",
+            "profit", "gain", "solv", "fix", "nice", "success", "help", "smooth", "impress",
+            "breathtak", "stunn", "upgrad", "unbeliev", "super", "clarit", "gorgeou", "perfect",
+            "delight", "pleas", "fast turnaround", "solid", "recommend", "thank", "crisp",
+            "favorit", "favourit", "premium", "worth", "proud", "like", "obsess"
+        )
+        neg_stems = (
+            "bad", "terribl", "worst", "hate", "awful", "poor", "crash", "drain", "brok", "fraud",
+            "scam", "loss", "fail", "slow", "bug", "error", "horribl", "dump", "freez", "froze",
+            "panic", "unusable", "reboot", "brick", "sacrific", "warn", "defect", "flaw",
+            "complain", "disappoint", "losing", "loses", "terribly", "issue", "problem", "broken",
+            "draining", "drainage", "drains", "crashed", "crashes", "crashing"
+        )
 
-        tokens = set(t.split())
-        p_count = sum(1 for w in tokens if w in pos_words)
-        n_count = sum(1 for w in tokens if w in neg_words)
+        tokens = set(re.findall(r'[a-z]+', t))
+        p_count = sum(1 for w in tokens if any(w.startswith(s) or s in w for s in pos_stems))
+        n_count = sum(1 for w in tokens if any(w.startswith(s) or s in w for s in neg_stems))
 
         if p_count > n_count:
             label = "POSITIVE"
-            pos_score, neg_score, neu_score = 0.75, 0.10, 0.15
+            pos_score = round(min(0.95, 0.65 + 0.08 * p_count), 4)
+            neg_score = round(max(0.05, 0.15 - 0.04 * p_count), 4)
+            neu_score = round(max(0.0, 1.0 - pos_score - neg_score), 4)
         elif n_count > p_count:
             label = "NEGATIVE"
-            pos_score, neg_score, neu_score = 0.10, 0.75, 0.15
+            neg_score = round(min(0.95, 0.65 + 0.08 * n_count), 4)
+            pos_score = round(max(0.05, 0.15 - 0.04 * n_count), 4)
+            neu_score = round(max(0.0, 1.0 - pos_score - neg_score), 4)
         else:
             label = "NEUTRAL"
             pos_score, neg_score, neu_score = 0.20, 0.20, 0.60

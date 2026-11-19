@@ -23,5 +23,8 @@ public interface SentimentResultRepository extends JpaRepository<SentimentResult
            "GROUP BY FUNCTION('DATE', p.postCreatedAt), s.label " +
            "ORDER BY d ASC")
     List<Object[]> getSentimentOverTime(@Param("datasetId") Long datasetId);
+
+    @Query("SELECT p.postCreatedAt, s.label FROM SentimentResult s JOIN s.post p WHERE p.dataset.id = :datasetId AND p.postCreatedAt IS NOT NULL ORDER BY p.postCreatedAt ASC")
+    List<Object[]> getSentimentPostTimestamps(@Param("datasetId") Long datasetId);
 }
 

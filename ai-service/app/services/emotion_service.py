@@ -1,4 +1,5 @@
 import logging
+import re
 from typing import List, Dict, Any
 import numpy as np
 import torch
@@ -18,6 +19,7 @@ class EmotionClassifier:
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         self.labels = ["anger", "disgust", "fear", "joy", "neutral", "sadness", "surprise"]
         self.is_loaded = False
+        self._attempted_load = False
 
     def load_model(self):
         try:
@@ -35,6 +37,10 @@ class EmotionClassifier:
     def predict_batch(self, items: List[TextItem]) -> List[EmotionResult]:
         if not items:
             return []
+
+        if not self.is_loaded and not self._attempted_load:
+            self._attempted_load = True
+            self.load_model()
 
         results: List[EmotionResult] = []
 
@@ -79,27 +85,32 @@ class EmotionClassifier:
     def _fallback_emotion(self, text_id: int, text: str) -> EmotionResult:
         t = text.lower()
         mapping = {
-            "joy": ["happy", "love", "delighted", "great", "awesome", "excited", "win", "glad"],
-            "anger": ["furious", "angry", "outrage", "hate", "mad", "annoyed", "pissed", "scam"],
-            "sadness": ["sad", "depressed", "unhappy", "cry", "tragic", "grief", "sorry", "drain"],
-            "fear": ["scared", "afraid", "panic", "fear", "danger", "risky", "worried"],
-            "surprise": ["wow", "shock", "unexpected", "surprise", "unbelievable", "omg"],
-            "disgust": ["gross", "disgusting", "nasty", "vile", "revolting"],
+            "joy": ["happy", "love", "lov", "delight", "great", "awesom", "excit", "win", "glad", "smooth", "impress", "breathtak", "stunn", "crisp", "super", "favorit", "clarit", "gorgeou", "proud", "like", "obsess"],
+            "anger": ["furious", "angry", "outrage", "hate", "mad", "annoy", "piss", "scam", "terribl", "horribl", "worst", "unaccept", "rip", "broken", "brok", "fraud", "dump"],
+            "sadness": ["sad", "depress", "unhapp", "cry", "tragic", "grief", "sorr", "drain", "drainage", "drains", "draining", "disappoint", "loses", "losing", "slow", "fail"],
+            "fear": ["scared", "afraid", "panic", "fear", "danger", "risky", "worried", "warn", "warning", "threat", "freez", "froze", "frozen", "brick", "crash", "crashed", "crashing", "crashes"],
+            "surprise": ["wow", "shock", "unexpected", "surprise", "unbeliev", "omg", "whoa", "breathtak"],
+            "disgust": ["gross", "disgust", "nasty", "vile", "revolt", "garbage", "trash"],
         }
 
         detected = "NEUTRAL"
         max_c = 0
-        tokens = set(t.split())
+        tokens = set(re.findall(r'[a-z]+', t))
 
         for emo, words in mapping.items():
-            cnt = sum(1 for w in words if w in tokens)
+            cnt = sum(1 for w in tokens if any(w.startswith(stem) or stem in w for stem in words))
             if cnt > max_c:
                 max_c = cnt
                 detected = emo.upper()
 
-        scores = {label: 0.10 for label in self.labels}
-        scores[detected.lower()] = 0.65
-        conf = 0.70 if max_c > 0 else 0.50
+        scores = {label: 0.05 for label in self.labels}
+        scores[detected.lower()] = round(min(0.85, 0.50 + 0.10 * max_c), 4)
+        rem = round(1.0 - scores[detected.lower()], 4)
+        for label in self.labels:
+            if label != detected.lower():
+                scores[label] = round(rem / (len(self.labels) - 1), 4)
+
+        conf = scores[detected.lower()]
 
         return EmotionResult(
             id=text_id,

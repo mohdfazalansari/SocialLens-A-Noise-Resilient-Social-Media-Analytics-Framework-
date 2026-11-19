@@ -197,11 +197,11 @@ export default function DashboardPage() {
           color="purple"
         />
         <StatCard
-          title="Emerging Trends"
+          title="Trend Alerts"
           value={overview?.emergingTrends || 0}
           icon={TrendingUp}
           color="amber"
-          trend="Filtered"
+          subtitle={overview?.emergingTrends ? `${overview.emergingTrends} alerts active` : "0 alerts"}
         />
       </div>
 
@@ -282,9 +282,9 @@ export default function DashboardPage() {
                     }}
                   />
                   <Legend verticalAlign="bottom" height={36} iconType="circle" />
-                  <Line type="monotone" dataKey="positive" stroke="#10b981" strokeWidth={2} dot={false} name="Positive" />
-                  <Line type="monotone" dataKey="negative" stroke="#f43f5e" strokeWidth={2} dot={false} name="Negative" />
-                  <Line type="monotone" dataKey="neutral" stroke="#64748b" strokeWidth={2} dot={false} name="Neutral" />
+                  <Line type="monotone" dataKey="positive" stroke="#10b981" strokeWidth={2} dot={{ r: 3 }} activeDot={{ r: 5 }} name="Positive" />
+                  <Line type="monotone" dataKey="negative" stroke="#f43f5e" strokeWidth={2} dot={{ r: 3 }} activeDot={{ r: 5 }} name="Negative" />
+                  <Line type="monotone" dataKey="neutral" stroke="#64748b" strokeWidth={2} dot={{ r: 3 }} activeDot={{ r: 5 }} name="Neutral" />
                 </LineChart>
               </ResponsiveContainer>
             ) : (

@@ -1,0 +1,113 @@
+post_id,platform,author_id,text,created_at,like_count,reply_count,share_count,reply_to_post_id
+p_1017,TWITTER,support_hero,Evaluating the kilowatt-hour charging curve across 400V vs 800V vehicle architectures.,2026-11-15 09:52:34,133,46,13,
+p_1078,TWITTER,support_hero,Looking for documentation on how to configure tool calling timeouts in the Python SDK.,2026-11-15 10:02:11,95,6,21,
+p_1005,TWITTER,dev_user_28,CRITICAL ALERT: Zero-day remote code execution vulnerability actively exploited in widespread enterprise servers! 🚨 #CybersecurityZero-Day,2026-11-15 10:23:38,20,1,5,
+p_1027,TWITTER,dev_user_21,Using autonomous AI agents for fullstack refactoring is magical. Architecture diagrams and unit tests generated flawlessly.,2026-11-15 10:36:55,36,7,4,
+p_1046,TWITTER,dev_user_12,The new AI coding IDE feels like programming from the year 2035. Blown away by the speed. #AICodingAgents,2026-11-15 10:44:06,44,1,4,
+p_1011,TWITTER,dev_user_15,"Customer support refused warranty replacement for failed battery module. Quoted $18,000 repair cost. Outrageous scam!",2026-11-15 13:00:06,14,7,0,
+p_1077,TWITTER,support_hero,@tech_analyst_prime Charging speeds throttled to 20kW after 10 minutes due to thermal runaway alert. Extremely frustrating. #EVInfrastructure,2026-11-15 16:40:38,248,31,17,tech_analyst_prime
+p_1073,TWITTER,dev_user_8,"@tech_analyst_prime Our production cluster was compromised through the zero-day flaw. Data encrypted, disaster recovery initiated. #CybersecurityZero-Day",2026-11-15 17:00:00,31,2,3,tech_analyst_prime
+p_1023,TWITTER,dev_user_15,Great analysis by the threat intel team deconstructing the firmware exploit mechanism.,2026-11-15 17:51:26,24,7,3,
+p_1007,REDDIT,dev_user_15,Battery chemistry comparison: LFP vs NMC energy density trade-offs for urban vehicles. #EVInfrastructure,2026-11-15 19:48:04,14,2,0,
+p_1070,TWITTER,dev_user_20,The generated code has severe security vulnerabilities and SQL injection flaws. Completely unusable in production. #AICodingAgents,2026-11-15 20:04:14,37,8,5,
+p_1010,REDDIT,dev_user_29,Using autonomous AI agents for fullstack refactoring is magical. Architecture diagrams and unit tests generated flawlessly.,2026-11-15 20:42:16,11,4,2,
+p_1082,TWITTER,dev_user_18,CVE identifier assigned for the memory corruption vulnerability disclosed this morning.,2026-11-15 20:51:26,2,2,6,
+p_1058,TWITTER,dev_user_27,@tech_analyst_prime Great analysis by the threat intel team deconstructing the firmware exploit mechanism.,2026-11-15 20:59:51,7,2,1,tech_analyst_prime
+p_1042,REDDIT,dev_user_22,AI assisted development is saving our team 20 hours a week. Best developer experience ever.,2026-11-15 21:04:38,4,8,5,
+p_1033,TWITTER,dev_user_29,@cyber_defense_center CVE identifier assigned for the memory corruption vulnerability disclosed this morning.,2026-11-15 22:34:04,25,8,4,cyber_defense_center
+p_1054,REDDIT,dev_user_10,Has anyone tried integrating local LLM weights into the new agentic IDE setup?,2026-11-15 23:01:29,39,4,1,
+p_1061,TWITTER,dev_user_32,Loving the bi-directional vehicle-to-home charging feature during power outages.,2026-11-15 23:17:03,24,5,5,
+p_1034,TWITTER,dev_user_14,The new AI autonomous coding agent resolved 15 complex bugs in 5 minutes! Unbelievable productivity boost.,2026-11-15 23:28:20,43,5,5,
+p_1057,TWITTER,dev_user_11,Great analysis by the threat intel team deconstructing the firmware exploit mechanism.,2026-11-15 23:55:37,31,1,3,
+p_1088,TWITTER,dev_user_28,@ai_lead_researcher Supercharger network expansion reached our rural highway corridor today. Seamless road trip experience!,2026-11-16 00:24:43,38,5,1,ai_lead_researcher
+p_1014,TWITTER,dev_user_24,Using autonomous AI agents for fullstack refactoring is magical. Architecture diagrams and unit tests generated flawlessly.,2026-11-16 01:13:26,18,8,4,
+p_1052,TWITTER,dev_user_20,Has anyone tried integrating local LLM weights into the new agentic IDE setup?,2026-11-16 01:56:56,6,0,0,
+p_1021,TWITTER,ev_guru_daily,The coding agent deleted my entire database schema during a refactoring pass! Completely catastrophic failure. #AICodingAgents,2026-11-16 02:55:45,129,23,7,
+p_1074,TWITTER,dev_user_32,@ai_lead_researcher Battery chemistry comparison: LFP vs NMC energy density trade-offs for urban vehicles.,2026-11-16 04:14:29,8,0,1,ai_lead_researcher
+p_1079,REDDIT,ev_guru_daily,CISA added the remote execution flaw to the Known Exploited Vulnerabilities catalog.,2026-11-16 04:28:23,210,30,22,
+p_1003,TWITTER,dev_user_9,CISA added the remote execution flaw to the Known Exploited Vulnerabilities catalog.,2026-11-16 05:29:06,41,2,4,
+p_1050,TWITTER,dev_user_26,Comparing benchmark results between multi-agent coding frameworks on HumanEval dataset. #AICodingAgents,2026-11-16 05:58:34,37,8,2,
+p_1004,TWITTER,dev_user_14,@support_hero CVE identifier assigned for the memory corruption vulnerability disclosed this morning. #CybersecurityZero-Day,2026-11-16 06:46:51,10,4,2,support_hero
+p_1068,TWITTER,dev_user_24,Department of Transportation released new standards for national EV charging interoperability today.,2026-11-16 08:09:06,42,5,3,
+p_1022,TWITTER,dev_user_34,"Our production cluster was compromised through the zero-day flaw. Data encrypted, disaster recovery initiated. #CybersecurityZero-Day",2026-11-16 08:13:45,11,4,2,
+p_1030,TWITTER,dev_user_22,Emergency security advisory: Disconnect all unpatched gateways immediately! Active compromise detected.,2026-11-16 08:22:42,26,6,6,
+p_1092,REDDIT,dev_user_5,AI hallucinations in unit tests are getting worse. It invented 10 non-existent library methods and passed fake assertions.,2026-11-16 09:25:59,31,4,2,
+p_1083,TWITTER,ai_lead_researcher,Security researchers rapidly patched the critical authentication bypass within 3 hours. Phenomenal response time! #CybersecurityZero-Day,2026-11-16 09:52:35,107,57,14,
+p_1072,REDDIT,support_hero,Using autonomous AI agents for fullstack refactoring is magical. Architecture diagrams and unit tests generated flawlessly.,2026-11-16 10:04:11,134,36,6,
+p_1081,REDDIT,dev_user_14,The generated code has severe security vulnerabilities and SQL injection flaws. Completely unusable in production.,2026-11-16 11:39:16,7,2,4,
+p_1032,TWITTER,dev_user_5,CISA added the remote execution flaw to the Known Exploited Vulnerabilities catalog.,2026-11-16 12:58:25,17,5,5,
+p_1056,REDDIT,tech_analyst_prime,Supercharger network expansion reached our rural highway corridor today. Seamless road trip experience!,2026-11-16 13:34:23,10,17,36,
+p_1012,REDDIT,dev_user_16,@tech_analyst_prime Autonomous agent got stuck in an infinite retry loop and consumed $150 of API credits in 10 minutes. Terrible safeguard design. #AICodingAgents,2026-11-16 14:31:16,30,1,4,tech_analyst_prime
+p_1041,TWITTER,dev_user_25,AI hallucinations in unit tests are getting worse. It invented 10 non-existent library methods and passed fake assertions. #AICodingAgents,2026-11-16 15:29:47,14,2,1,
+p_1020,TWITTER,dev_user_34,@tech_analyst_prime The new AI coding IDE feels like programming from the year 2035. Blown away by the speed.,2026-11-16 15:41:09,40,7,2,tech_analyst_prime
+p_1094,TWITTER,dev_user_21,Using autonomous AI agents for fullstack refactoring is magical. Architecture diagrams and unit tests generated flawlessly.,2026-11-16 16:03:30,9,1,0,
+p_1016,TWITTER,dev_user_34,The generated code has severe security vulnerabilities and SQL injection flaws. Completely unusable in production. #AICodingAgents,2026-11-16 17:22:13,15,2,1,
+p_1037,REDDIT,dev_user_17,@ev_guru_daily CISA added the remote execution flaw to the Known Exploited Vulnerabilities catalog. #CybersecurityZero-Day,2026-11-16 18:34:56,14,2,2,ev_guru_daily
+p_1087,TWITTER,dev_user_7,Looking for documentation on how to configure tool calling timeouts in the Python SDK. #AICodingAgents,2026-11-16 18:44:29,26,7,0,
+p_1008,REDDIT,dev_user_18,Battery chemistry comparison: LFP vs NMC energy density trade-offs for urban vehicles.,2026-11-16 19:50:56,22,7,0,
+p_1026,TWITTER,dev_user_10,@ai_lead_researcher New solid-state EV battery hit 800 miles range on a single 15-minute charge! The future is finally here. #EVInfrastructure,2026-11-16 20:21:08,40,3,5,ai_lead_researcher
+p_1060,REDDIT,dev_user_23,Autonomous agent architecture paper published on arXiv today covering self-reflection loops.,2026-11-16 21:05:11,5,5,4,
+p_1028,REDDIT,dev_user_22,CRITICAL ALERT: Zero-day remote code execution vulnerability actively exploited in widespread enterprise servers! 🚨,2026-11-16 21:33:59,30,4,1,
+p_1040,TWITTER,dev_user_8,The coding agent deleted my entire database schema during a refactoring pass! Completely catastrophic failure.,2026-11-16 22:46:27,24,2,0,
+p_1071,TWITTER,dev_user_6,Emergency security advisory: Disconnect all unpatched gateways immediately! Active compromise detected.,2026-11-17 00:24:52,16,6,1,
+p_1002,REDDIT,ai_lead_researcher,Looking for documentation on how to configure tool calling timeouts in the Python SDK.,2026-11-17 01:10:34,84,36,19,
+p_1066,REDDIT,dev_user_24,AI hallucinations in unit tests are getting worse. It invented 10 non-existent library methods and passed fake assertions. #AICodingAgents,2026-11-17 01:17:21,37,8,2,
+p_1084,TWITTER,dev_user_33,@ai_lead_researcher Emergency security advisory: Disconnect all unpatched gateways immediately! Active compromise detected. #CybersecurityZero-Day,2026-11-17 02:43:33,33,2,4,ai_lead_researcher
+p_1064,REDDIT,tech_analyst_prime,Autonomous agent got stuck in an infinite retry loop and consumed $150 of API credits in 10 minutes. Terrible safeguard design.,2026-11-17 03:00:45,288,3,22,
+p_1015,TWITTER,dev_user_20,Emergency security advisory: Disconnect all unpatched gateways immediately! Active compromise detected. #CybersecurityZero-Day,2026-11-17 03:22:28,20,8,0,
+p_1075,TWITTER,dev_user_21,CRITICAL ALERT: Zero-day remote code execution vulnerability actively exploited in widespread enterprise servers! 🚨,2026-11-17 03:35:02,36,6,6,
+p_1089,REDDIT,dev_user_29,"Customer support refused warranty replacement for failed battery module. Quoted $18,000 repair cost. Outrageous scam! #EVInfrastructure",2026-11-17 03:40:30,28,6,5,
+p_1051,TWITTER,dev_user_30,Supercharger network expansion reached our rural highway corridor today. Seamless road trip experience!,2026-11-17 03:47:39,27,8,6,
+p_1043,REDDIT,dev_user_2,Incredible work on the multi-agent orchestration framework. Parallel tool calling works like a charm!,2026-11-17 03:57:05,0,5,0,
+p_1063,REDDIT,dev_user_33,@tech_analyst_prime New solid-state EV battery hit 800 miles range on a single 15-minute charge! The future is finally here.,2026-11-17 05:41:27,7,8,1,tech_analyst_prime
+p_1055,TWITTER,ev_guru_daily,"Customer support refused warranty replacement for failed battery module. Quoted $18,000 repair cost. Outrageous scam!",2026-11-17 09:14:31,11,10,7,
+p_1093,TWITTER,dev_user_34,Security researchers rapidly patched the critical authentication bypass within 3 hours. Phenomenal response time!,2026-11-17 10:03:34,35,6,3,
+p_1062,TWITTER,dev_user_12,"Our production cluster was compromised through the zero-day flaw. Data encrypted, disaster recovery initiated.",2026-11-17 10:18:32,13,3,5,
+p_1090,REDDIT,dev_user_1,CRITICAL ALERT: Zero-day remote code execution vulnerability actively exploited in widespread enterprise servers! 🚨 #CybersecurityZero-Day,2026-11-17 10:38:09,39,5,4,
+p_1085,TWITTER,dev_user_1,@ai_lead_researcher CVE identifier assigned for the memory corruption vulnerability disclosed this morning. #CybersecurityZero-Day,2026-11-17 10:57:09,45,2,1,ai_lead_researcher
+p_1049,TWITTER,dev_user_16,"Our production cluster was compromised through the zero-day flaw. Data encrypted, disaster recovery initiated.",2026-11-17 11:56:10,3,8,4,
+p_1024,TWITTER,dev_user_5,@ai_lead_researcher Has anyone tried integrating local LLM weights into the new agentic IDE setup?,2026-11-17 12:55:02,37,3,4,ai_lead_researcher
+p_1045,TWITTER,dev_user_5,CRITICAL ALERT: Zero-day remote code execution vulnerability actively exploited in widespread enterprise servers! 🚨,2026-11-17 15:11:37,34,0,0,
+p_1029,REDDIT,dev_user_20,Supercharger network expansion reached our rural highway corridor today. Seamless road trip experience!,2026-11-17 15:40:54,45,7,6,
+p_1013,TWITTER,ev_guru_daily,CISA added the remote execution flaw to the Known Exploited Vulnerabilities catalog.,2026-11-17 18:08:36,178,57,22,
+p_1069,TWITTER,dev_user_31,@cyber_defense_center Arrived at the highway charging station and 6 out of 8 stalls were broken! Stuck with 3% battery in freezing rain.,2026-11-17 18:10:41,7,1,4,cyber_defense_center
+p_1006,TWITTER,dev_user_22,Loving the bi-directional vehicle-to-home charging feature during power outages. #EVInfrastructure,2026-11-17 18:26:20,16,4,3,
+p_1044,TWITTER,dev_user_7,"Battery degradation after 100,000 miles is only 2.5%. Impressive engineering and thermal management.",2026-11-17 18:49:45,28,1,0,
+p_1047,TWITTER,cyber_defense_center,@cyber_defense_center The coding agent deleted my entire database schema during a refactoring pass! Completely catastrophic failure. #AICodingAgents,2026-11-17 19:19:38,206,23,24,cyber_defense_center
+spam_2000,TWITTER,bot_spammer_1,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:37:15,1,0,0,
+spam_2001,TWITTER,bot_spammer_2,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:39:15,2,0,0,
+spam_2002,TWITTER,bot_spammer_3,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:41:15,2,0,0,
+spam_2003,TWITTER,bot_spammer_4,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:43:15,1,0,0,
+spam_2004,TWITTER,bot_spammer_5,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:45:15,0,0,0,
+spam_2005,TWITTER,bot_spammer_6,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:47:15,1,0,0,
+spam_2006,TWITTER,bot_spammer_7,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:49:15,2,0,0,
+spam_2007,TWITTER,bot_spammer_8,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:51:15,0,0,0,
+spam_2008,TWITTER,bot_spammer_9,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:53:15,2,0,0,
+spam_2009,TWITTER,bot_spammer_10,Free crypto token airdrop claim now! Verify wallet at instant-claim-airdrop.xyz #Airdrop #Free,2026-11-17 19:55:15,2,0,0,
+p_1039,TWITTER,dev_user_4,CISA added the remote execution flaw to the Known Exploited Vulnerabilities catalog. #CybersecurityZero-Day,2026-11-17 20:09:51,11,4,4,
+p_1076,TWITTER,dev_user_3,Severe ransomware breach reported across 12 healthcare systems. Data exfiltration in progress! 🚨 #CybersecurityZero-Day,2026-11-17 20:28:18,15,1,0,
+p_1059,TWITTER,dev_user_1,Looking for documentation on how to configure tool calling timeouts in the Python SDK.,2026-11-17 20:37:01,40,6,5,
+p_1038,REDDIT,tech_analyst_prime,@tech_analyst_prime CISA added the remote execution flaw to the Known Exploited Vulnerabilities catalog.,2026-11-17 20:52:57,234,15,31,tech_analyst_prime
+p_1067,TWITTER,dev_user_32,Great analysis by the threat intel team deconstructing the firmware exploit mechanism.,2026-11-17 21:02:28,14,0,1,
+p_1018,TWITTER,dev_user_20,@ev_guru_daily Great analysis by the threat intel team deconstructing the firmware exploit mechanism. #CybersecurityZero-Day,2026-11-17 21:21:25,5,4,1,ev_guru_daily
+p_1025,TWITTER,dev_user_8,@ai_lead_researcher Using autonomous AI agents for fullstack refactoring is magical. Architecture diagrams and unit tests generated flawlessly. #AICodingAgents,2026-11-17 22:11:20,4,7,0,ai_lead_researcher
+p_1080,TWITTER,dev_user_16,@cyber_defense_center Using autonomous AI agents for fullstack refactoring is magical. Architecture diagrams and unit tests generated flawlessly.,2026-11-17 22:18:46,9,0,2,cyber_defense_center
+p_1053,TWITTER,dev_user_22,The coding agent deleted my entire database schema during a refactoring pass! Completely catastrophic failure. #AICodingAgents,2026-11-17 22:30:43,12,8,3,
+p_1001,REDDIT,dev_user_19,Severe ransomware breach reported across 12 healthcare systems. Data exfiltration in progress! 🚨 #CybersecurityZero-Day,2026-11-17 23:08:35,38,0,4,
+p_1036,TWITTER,dev_user_9,Security researchers rapidly patched the critical authentication bypass within 3 hours. Phenomenal response time! #CybersecurityZero-Day,2026-11-17 23:30:20,17,0,1,
+p_1000,REDDIT,dev_user_19,AI assisted development is saving our team 20 hours a week. Best developer experience ever.,2026-11-18 02:50:32,2,0,1,
+p_1048,REDDIT,dev_user_11,@support_hero Security researchers rapidly patched the critical authentication bypass within 3 hours. Phenomenal response time!,2026-11-18 03:44:34,13,2,0,support_hero
+p_1019,REDDIT,dev_user_31,Great analysis by the threat intel team deconstructing the firmware exploit mechanism.,2026-11-18 04:43:22,37,6,5,
+p_1035,TWITTER,dev_user_16,Emergency security advisory: Disconnect all unpatched gateways immediately! Active compromise detected. #CybersecurityZero-Day,2026-11-18 04:50:31,35,1,4,
+p_1065,REDDIT,dev_user_24,Has anyone tried integrating local LLM weights into the new agentic IDE setup?,2026-11-18 04:58:47,36,6,0,
+p_1091,TWITTER,dev_user_10,"Battery degradation after 100,000 miles is only 2.5%. Impressive engineering and thermal management.",2026-11-18 05:22:13,30,3,2,
+p_1031,REDDIT,dev_user_3,AI assisted development is saving our team 20 hours a week. Best developer experience ever. #AICodingAgents,2026-11-18 06:21:21,43,1,0,
+p_1009,REDDIT,dev_user_9,Severe ransomware breach reported across 12 healthcare systems. Data exfiltration in progress! 🚨,2026-11-18 09:05:51,35,5,6,
+p_1086,TWITTER,dev_user_32,CVE identifier assigned for the memory corruption vulnerability disclosed this morning.,2026-11-18 09:51:23,38,4,0,
+burst_3000,TWITTER,cyber_defense_center,Major cloud data center outage reported in US-East! 500+ services offline! 🚨,2026-11-18 23:37:15,288,75,72,cyber_defense_center
+burst_3001,TWITTER,dev_user_12,AWS and Azure regional outage affecting thousands of enterprise portals simultaneously.,2026-11-18 23:43:15,266,34,76,
+burst_3002,TWITTER,dev_user_27,Total network blackout across northern cloud region. Backup generators failed.,2026-11-18 23:49:15,272,64,102,cyber_defense_center
+burst_3003,TWITTER,dev_user_9,All our production microservices are returning 504 gateway timeout due to the cloud backbone failure.,2026-11-18 23:55:15,123,57,78,
+burst_3004,TWITTER,dev_user_7,Status page finally updated: Major power distribution failure at core internet exchange.,2026-11-19 00:01:15,178,50,102,cyber_defense_center
+burst_3005,TWITTER,dev_user_18,Engineers on-site attempting to restore secondary power grid after massive blackout.,2026-11-19 00:07:15,201,36,88,
+burst_3006,TWITTER,dev_user_34,Cloud outage enters hour 2. Severe financial losses reported across automated trading desks.,2026-11-19 00:13:15,175,62,105,cyber_defense_center

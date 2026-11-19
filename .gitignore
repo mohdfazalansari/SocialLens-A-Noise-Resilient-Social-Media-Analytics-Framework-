@@ -8,6 +8,16 @@ backend/.project
 backend/.classpath
 backend/.settings/
 
+# Environment & Secrets
+.env
+.env.*
+*.env
+!.env.example
+*.pem
+*.key
+*.jks
+*.p12
+
 # Python / FastAPI
 ai-service/__pycache__/
 ai-service/*/__pycache__/
@@ -17,6 +27,7 @@ ai-service/.pytest_cache/
 ai-service/venv/
 ai-service/.env
 *.pyc
+__pycache__/
 
 # Node / React
 frontend/node_modules/
@@ -41,4 +52,7 @@ uploads/
 logs/
 *.log
 ~$*
+*.tmp
+*.bak
+desktop.ini
 

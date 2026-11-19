@@ -11,6 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -73,8 +77,7 @@ public class AnalyticsService {
         dto.setActiveTopics(topics.size());
 
         List<com.project.socialanalytics.entity.TrendAlert> alerts = trendAlertRepository.findByDatasetId(datasetId);
-        long emergingCount = alerts.stream().filter(a -> "EMERGING".equalsIgnoreCase(a.getClassification())).count();
-        dto.setEmergingTrends((int) emergingCount);
+        dto.setEmergingTrends(alerts.size());
 
         Map<String, Long> platforms = new HashMap<>();
         for (Object[] r : socialPostRepository.countByPlatformForDataset(datasetId)) {
@@ -121,18 +124,62 @@ public class AnalyticsService {
             dto.setNetSentimentScore(0.0);
         }
 
-        // Sentiment over time
+        // Sentiment over time (dynamic hourly or daily resolution)
         Map<String, long[]> timeMap = new TreeMap<>();
-        List<Object[]> timeRows = sentimentResultRepository.getSentimentOverTime(datasetId);
-        for (Object[] r : timeRows) {
-            String dateStr = r[0] != null ? r[0].toString() : "Unknown";
-            String label = ((String) r[1]).toUpperCase();
-            Long count = (Long) r[2];
+        List<Object[]> postTimestamps = sentimentResultRepository.getSentimentPostTimestamps(datasetId);
 
-            timeMap.putIfAbsent(dateStr, new long[3]); // [0]=pos, [1]=neg, [2]=neu
-            if ("POSITIVE".equals(label)) timeMap.get(dateStr)[0] += count;
-            else if ("NEGATIVE".equals(label)) timeMap.get(dateStr)[1] += count;
-            else timeMap.get(dateStr)[2] += count;
+        if (!postTimestamps.isEmpty()) {
+            LocalDateTime minTime = null;
+            LocalDateTime maxTime = null;
+
+            List<Map.Entry<LocalDateTime, String>> records = new ArrayList<>();
+            for (Object[] r : postTimestamps) {
+                if (r[0] != null) {
+                    LocalDateTime dt = toLocalDateTime(r[0]);
+                    if (dt != null) {
+                        if (minTime == null || dt.isBefore(minTime)) minTime = dt;
+                        if (maxTime == null || dt.isAfter(maxTime)) maxTime = dt;
+                        String label = r[1] != null ? ((String) r[1]).toUpperCase() : "NEUTRAL";
+                        records.add(new AbstractMap.SimpleEntry<>(dt, label));
+                    }
+                }
+            }
+
+            DateTimeFormatter formatter;
+            if (minTime != null && maxTime != null) {
+                long hoursBetween = Duration.between(minTime, maxTime).toHours();
+                if (hoursBetween > 48) {
+                    formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                } else if (hoursBetween >= 1) {
+                    formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:00");
+                } else {
+                    formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+                }
+            } else {
+                formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            }
+
+            for (Map.Entry<LocalDateTime, String> entry : records) {
+                String bucket = entry.getKey().format(formatter);
+                String label = entry.getValue();
+
+                timeMap.putIfAbsent(bucket, new long[3]); // [0]=pos, [1]=neg, [2]=neu
+                if ("POSITIVE".equals(label)) timeMap.get(bucket)[0]++;
+                else if ("NEGATIVE".equals(label)) timeMap.get(bucket)[1]++;
+                else timeMap.get(bucket)[2]++;
+            }
+        } else {
+            List<Object[]> timeRows = sentimentResultRepository.getSentimentOverTime(datasetId);
+            for (Object[] r : timeRows) {
+                String dateStr = r[0] != null ? r[0].toString() : "Unknown";
+                String label = ((String) r[1]).toUpperCase();
+                Long count = (Long) r[2];
+
+                timeMap.putIfAbsent(dateStr, new long[3]);
+                if ("POSITIVE".equals(label)) timeMap.get(dateStr)[0] += count;
+                else if ("NEGATIVE".equals(label)) timeMap.get(dateStr)[1] += count;
+                else timeMap.get(dateStr)[2] += count;
+            }
         }
 
         List<SentimentAnalyticsDto.TimePoint> timePoints = new ArrayList<>();
@@ -147,6 +194,20 @@ public class AnalyticsService {
         dto.setOverTime(timePoints);
 
         return dto;
+    }
+
+    private LocalDateTime toLocalDateTime(Object obj) {
+        if (obj == null) return null;
+        if (obj instanceof LocalDateTime) return (LocalDateTime) obj;
+        if (obj instanceof java.sql.Timestamp) return ((java.sql.Timestamp) obj).toLocalDateTime();
+        if (obj instanceof java.util.Date) {
+            return ((java.util.Date) obj).toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        }
+        try {
+            return LocalDateTime.parse(obj.toString().replace(" ", "T"));
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Transactional(readOnly = true)
